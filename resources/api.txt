@@ -1,0 +1,21 @@
+Marquee Text API (Selesai)
+Http Method : GET http://localhost:8080/api/get_marquee_text
+Http Method : POST http://localhost:8080/api/add_marquee_text => body : {"text": (:text)}
+Http Method : DELETE http://localhost:8080/api/remove_marquee_text/(:no)
+
+QrCode API (Selesai)
+Http Method : GET http://localhost:8080/api/get_qrcode
+Http Method : GET http://localhost:8080/api/get_use_qrcode
+Http Method : POST http://localhost:8080/api/add_qrcode => body : {"value": (:value), "description": (:description)}
+Http Method : POST http://localhost:8080/api/set_use_qrcode => body : {"id": (:id)}
+Http Method : DELETE http://localhost:8080/api/remove_qrcode/(:id)
+
+Video API (Selesai)
+Http Method : GET http://localhost:8080/api/get_video
+Http Method : POST http://localhost:8080/api/add_video => body : {"file_video": (:file_video), "title": (:title)}
+Http Method : DELETE http://localhost:8080/api/remove_video/(:id)
+
+Activity API (Selesai)
+Http Method : GET http://localhost:8080/api/get_activity/(:day)
+Http Method : POST http://localhost:8080/api/add_activity => body : {"file_image": (:file_image), "title": (:title), "text": (:text), "date": (:date)}
+Http Method : DELETE http://localhost:8080/api/remove_activity/(:id)
