@@ -26,6 +26,10 @@ $routes->get('/api/get_activity/(:num)', 'ApiController::get_activity/$1');
 $routes->post('/api/add_activity', 'ApiController::add_activity');
 $routes->delete('/api/remove_activity/(:num)', 'ApiController::remove_activity/$1');
 
+$routes->get('/api/get_tompel', 'ApiController::get_tompel');
+$routes->post('/api/set_tompel', 'ApiController::set_tompel');
+$routes->post('/api/reset_tompel', 'ApiController::reset_tompel');
+
 // Control Panel
 $routes->get('/control_panel', 'ControlPanelController::login');
 $routes->post('/control_panel', 'ControlPanelController::login');
@@ -46,3 +50,6 @@ $routes->post('/control_panel/video', 'ControlPanelController::video');
 
 $routes->get('/control_panel/activity', 'ControlPanelController::activity');
 $routes->post('/control_panel/activity', 'ControlPanelController::activity');
+
+$routes->get('/control_panel/tompel', 'ControlPanelController::tompel');
+$routes->post('/control_panel/tompel', 'ControlPanelController::tompel');

@@ -7,6 +7,7 @@ use App\Models\AkunModel;
 use App\Models\ActivityModel;
 use App\Models\MarqueeTextModel;
 use App\Models\QrCodeModel;
+use App\Models\TompelModel;
 use App\Models\VideoModel;
 
 use Endroid\QrCode\Color\Color;
@@ -308,6 +309,37 @@ class ControlPanelController extends BaseController {
             $data["activity_list"] = $model->findAll();
 
             return view("control_panels/activity", $data);
+        }else{
+            return view("control_panels/login", $data);
+        }
+    }
+
+    public function tompel() {
+        $data = $this->isLogin();
+        if($data["status"] == true)
+        {
+            $data["sidebar_select"] = "tompel";
+
+            $model = new TompelModel();
+
+            if(isset($_GET["reset"])){
+                $id = $_GET["reset"];
+                $model->find($id);
+                $model->update($id, ["text" => "DDS"]);
+                unset($_GET["reset"]);
+            }
+
+            if(isset($_POST["id"]) && isset($_POST["text"])){
+                $id = $_POST["id"];
+                $text = $_POST["text"];
+                $model->find($id);
+                $model->update($id, ["text" => $text]);
+                unset($_POST["id"], $_POST["text"]);
+            }
+
+            $data["tompel_list"] = $model->findAll();
+
+            return view("control_panels/tompel", $data);
         }else{
             return view("control_panels/login", $data);
         }

@@ -184,6 +184,7 @@ class QrCodeModel {
 class Tablet {
 
     qrcode;
+    tompel_text;
     marquee_text = [];
     videos = [];
     currentVideoIndex = 0;
@@ -267,6 +268,27 @@ class Tablet {
         .catch((error) => {})
         .finally(() => {});
     }
+
+    setTompel() {
+        const get_tompel_api_url = base_url("api/get_tompel");
+        const tablet_tompel_container = document.querySelector(".tablet-tompel-container");
+        const tablet_tompel = document.querySelector(".tablet-tompel-text");
+        axios.get(get_tompel_api_url)
+        .then((response) => {
+            const data = response["data"];
+            if(data.length > 0) {
+                this.tompel_text = data[0].text;
+            }
+        })
+        .catch((error) => {})
+        .finally(() => {
+            if(this.tompel_text != undefined)
+            {
+                tablet_tompel_container.style.visibility = "visible";
+                tablet_tompel.innerHTML = this.tompel_text;
+            }
+        });
+    }
 }
 
 let timeout;
@@ -287,6 +309,7 @@ function update()
     tablet.setMarqueeText();
     tablet.setQrCode();
     tablet.setVideo();
+    tablet.setTompel();
     hp.setNotification();
 
     timeout = setTimeout(update, 5000);

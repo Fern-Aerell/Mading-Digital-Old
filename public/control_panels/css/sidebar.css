@@ -77,6 +77,10 @@ body {
     transform: translateY(300%);
 }
 
+.sidebar_select_tompel {
+    transform: translateY(400%);
+}
+
 .logout-button {
     width: 100%;
     height: 64px;

@@ -7,6 +7,7 @@ use App\Models\ActivityModel;
 use App\Models\MarqueeTextModel;
 use App\Models\QrCodeModel;
 use App\Models\VideoModel;
+use App\Models\TompelModel;
 
 use Endroid\QrCode\Color\Color;
 use Endroid\QrCode\Encoding\Encoding;
@@ -300,6 +301,63 @@ class ApiController extends BaseController {
             return $this->response->setJSON(["success" => "Berhasil menghapus activity dengan id $id"]);
         }else{
             return $this->response->setJSON(["failed" => "Gagal menghapus activity dengan id $id"]);
+        }
+    }
+
+    // Tompel API
+    public function get_tompel() {
+        $this->response->setHeader('Content-Type', 'application/json');
+        $model = new TompelModel();
+        $data = $model->find();
+        if (empty($data)) {
+            return $this->response->setJSON([]);
+        } else {
+            return $this->response->setJSON($data);
+        }
+    }
+
+    public function set_tompel() {
+        $this->response->setHeader('Content-Type', 'application/json');
+        if(isset($_POST["id"]) && isset($_POST["text"]))
+        {
+            $model = new TompelModel();
+            $id = $_POST["id"];
+            $text = $_POST["text"];
+
+            $result = $model->find($id);
+
+            if(empty($result))
+            {
+                return $this->response->setJSON(["error" => "Tompel dengan id $id tidak ada"]);
+            }
+
+            $model->update($id, ["text" => $text]);
+
+            return $this->response->setJSON(["success" => "Berhasil mengset tompel dengan id $id"]);
+        }else{
+            return $this->response->setJSON(["error" => "id dan text tidak terdefinisi."]);
+        }
+    }
+
+    public function reset_tompel() {
+        $this->response->setHeader('Content-Type', 'application/json');
+        if(isset($_POST["id"]))
+        {
+            $model = new TompelModel();
+            $id = $_POST["id"];
+
+            $result = $model->find($id);
+
+            if(empty($result))
+            {
+                return $this->response->setJSON(["error" => "Tompel dengan id $id tidak ada"]);
+            }
+
+            $model->update($id, ["text" => "DDS"]);
+
+            return $this->response->setJSON(["success" => "Berhasil mereset tompel dengan id $id"]);
+        }else{
+            return $this->response->setJSON(["error" => "id tidak terdefinisi."]);
         }
     }
 }

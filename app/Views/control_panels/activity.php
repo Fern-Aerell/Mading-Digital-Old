@@ -10,7 +10,7 @@
     <?php require_once "../app/Views/control_panels/templates/sidebar.php" ?>
 
     <div class="container">
-        <h1>Jadwal</h1>
+        <h1>JADWAL</h1>
         <div>
 
             <?php 

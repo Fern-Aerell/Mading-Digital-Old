@@ -19,3 +19,8 @@ Activity API (Selesai)
 Http Method : GET http://localhost:8080/api/get_activity/(:day)
 Http Method : POST http://localhost:8080/api/add_activity => body : {"file_image": (:file_image), "title": (:title), "text": (:text), "date": (:date)}
 Http Method : DELETE http://localhost:8080/api/remove_activity/(:id)
+
+TOMPEL API (Selesai)
+Http Method : GET http://localhost:8080/api/get_tompel
+Http Method : POST http://localhost:8080/api/set_tompel => body : {"id": (:id), "text": (:text)}
+Http Method : POST http://localhost:8080/api/reset_tompel => body : {"id": (:id)}

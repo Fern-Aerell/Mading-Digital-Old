@@ -335,8 +335,9 @@ body {
 }
 
 .tablet-tompel-container {
+    visibility: hidden;
     flex: 0.05;
-    width: 20%;
+    min-width: 20%;
     height: 100%;
     align-self: center;
     background-color: white;
@@ -354,6 +355,7 @@ body {
     background-color: black;
     border-bottom-left-radius: calc(0.7vw + 0.7vh);
     border-bottom-right-radius: calc(0.7vw + 0.7vh);
+    padding: 0 calc(0.3vw + 0.3vh);
 }
 
 .tablet-tompel-text {
@@ -366,5 +368,5 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: calc(0.9vw + 0.9vh);
+    font-size: calc(0.7vw + 0.7vh);
 }

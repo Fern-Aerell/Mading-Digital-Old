@@ -8,6 +8,7 @@
             <a href="marquee_text"><img class="icon" src="<?= base_url("control_panels/icon/sidebar_marquee_text_icon.png")?>" alt="marquee_text_icon"></a>
             <a href="video"><img class="icon" src="<?= base_url("control_panels/icon/sidebar_video_icon.png")?>" alt="video_icon"></a>
             <a href="activity"><img class="icon" src="<?= base_url("control_panels/icon/sidebar_jadwal_icon.png")?>" alt="jadwal_icon"></a>
+            <a href="tompel"><img class="icon" src="<?= base_url("control_panels/icon/sidebar_tompel_icon.png")?>" alt="tompel_icon"></a>
         </div>
     </div>
     <a class="logout-button" href="logout"><img src="<?= base_url("control_panels/icon/logout.png") ?>" alt="logout_icon"></a>
