@@ -1,43 +1,43 @@
-# Mading Digital
+# Digital Bulletin Board (PHP)
 
-"Mading Digital" adalah sebuah inovasi teknologi yang dirancang untuk memodernisasi konsep tradisional dari mading sekolah. Menggabungkan teknologi web terkini, proyek ini memanfaatkan HTML, CSS, JavaScript, PHP, CodeIgniter 4, Composer, dan MySQL untuk menciptakan platform yang dinamis dan responsif.
+"Digital Bulletin Board" is a technological innovation designed to modernize the traditional concept of school bulletin boards. By integrating the latest web technologies, this project uses HTML, CSS, JavaScript, PHP, CodeIgniter 4, Composer, and MySQL to create a dynamic and responsive platform.
 
-| Konten |
-| ------ |
-| [Teknologi yang Digunakan](#teknologi-yang-digunakan) |
-| [Fitur Utama](#fitur-utama) |
-| [Persyaratan Yang Dibutuhkan](#persyaratan-yang-dibutuhkan) |
-| [Cara Setup Di Raspberry Pi](#cara-setup-di-raspberry-pi) |
-| [Pembuat beserta perannya](#pembuat-beserta-perannya) |
+| Contents |
+| -------- |
+| [Technologies Used](#technologies-used) |
+| [Key Features](#key-features) |
+| [Requirements](#requirements) |
+| [Setup on Raspberry Pi](#setup-on-raspberry-pi) |
+| [Creators and Roles](#creators-and-roles) |
 
-## Teknologi yang Digunakan
-1. **HTML, CSS, dan JavaScript:** Mewujudkan antarmuka pengguna yang menarik dan responsif, memastikan pengalaman pengguna yang optimal.
-  
-2. **PHP dan CodeIgniter 4:** Digunakan sebagai kerangka kerja pengembangan web untuk menyederhanakan pengembangan dan menjaga keamanan proyek. CodeIgniter 4 memberikan struktur yang terorganisir dan memudahkan manajemen sumber daya.
+## Technologies Used
+1. **HTML, CSS, and JavaScript:** These technologies bring the user interface to life, ensuring an engaging and responsive user experience.
 
-3. **Composer:** Dengan menggunakan Composer, manajer dependensi PHP, proyek ini dapat dengan mudah mengelola dan memperbarui pustaka pihak ketiga yang diperlukan.
+2. **PHP and CodeIgniter 4:** Used as the web development framework to streamline development and ensure project security. CodeIgniter 4 provides a structured environment that simplifies resource management.
 
-4. **MySQL:** Sebagai sistem manajemen basis data, MySQL digunakan untuk menyimpan dan mengelola data terkait video, QR code, teks marquee berita, dan jadwal kegiatan sekolah.
+3. **Composer:** With Composer, the PHP dependency manager, this project can easily manage and update the required third-party libraries.
 
-## Fitur Utama
-1. **Tampilan Video:** Mading Digital ini memungkinkan untuk menampilkan video secara langsung, memberikan dimensi multimedia pada informasi yang disampaikan.
+4. **MySQL:** As the database management system, MySQL is used to store and manage data related to videos, QR codes, marquee news texts, and school schedules.
 
-2. **QR Code:** Memberikan kemudahan akses dengan menyematkan QR code, memungkinkan pengguna untuk mengakses informasi lebih lanjut dengan mudah.
+## Key Features
+1. **Video Display:** The Digital Bulletin Board allows live video streaming, adding a multimedia dimension to the information being displayed.
 
-3. **Marquee Text Berita:** Menghadirkan teks berita yang bergerak, memastikan bahwa informasi terkini dan penting mendapatkan perhatian maksimal.
+2. **QR Code:** It provides easy access by embedding QR codes, allowing users to easily access further information.
 
-4. **Jadwal Kegiatan Sekolah:** Secara otomatis menampilkan jadwal kegiatan sekolah sesuai dengan hari yang berlaku, memberikan panduan waktu yang mudah diakses.
+3. **Marquee News Text:** It features scrolling news text, ensuring that the most current and important information gets maximum attention.
 
-5. **Control Panel:** Sebuah antarmuka pengguna yang dapat diakses dengan mudah untuk mengelola konten. Control panel ini memungkinkan pengguna untuk memperbarui data dalam database, mengganti tampilan, dan membuat perubahan lainnya.
+4. **School Activity Schedule:** Automatically displays the school schedule according to the current day, providing easy access to time-related guidance.
 
-6. **Otomatisasi Perubahan:** Setiap perubahan yang dilakukan melalui control panel akan langsung tercermin pada tampilan Mading Digital. Proses otomatisasi ini memastikan keakuratan dan konsistensi informasi.
+5. **Control Panel:** An easily accessible user interface for managing content. The control panel allows users to update database data, change the layout, and make other modifications.
 
-Proyek "Mading Digital" tidak hanya memberikan sentuhan modern pada tradisi mading sekolah, tetapi juga meningkatkan efisiensi dalam menyampaikan informasi. Dengan kombinasi teknologi terkini dan manajemen yang efektif melalui control panel, proyek ini membawa pendekatan yang inovatif dan responsif dalam mengelola informasi sekolah.
+6. **Automated Updates:** Any changes made through the control panel are automatically reflected in the Digital Bulletin Board display, ensuring accuracy and consistency of information.
 
-## Persyaratan Yang Dibutuhkan
-- Mysql 5.1+
+The "Digital Bulletin Board" project not only brings a modern touch to the traditional school bulletin board but also enhances efficiency in delivering information. By combining the latest technologies and effective management through the control panel, this project introduces an innovative and responsive approach to managing school information.
+
+## Requirements
+- MySQL 5.1+
 - PHP v8.2+
-- PHP v8.2+ Extension
+- PHP v8.2+ Extensions:
   - php-intl
   - php-mbstring
   - php-json
@@ -48,7 +48,7 @@ Proyek "Mading Digital" tidak hanya memberikan sentuhan modern pada tradisi madi
 - Apache 2.4.56+
 - Composer v2.6.3+
 
-## Cara Setup Di Raspberry Pi
+## Setup on Raspberry Pi
 
 1. **Update Linux**
 ```sh
@@ -63,21 +63,21 @@ sudo apt-get upgrade -y
 sudo apt install git -y
 ```
 
-3. **Install Mysql Dan Ganti Password User Root Mysql**
+3. **Install MySQL and Change Root User Password**
 ```sh
-# Install mysql
+# Install MySQL
 sudo apt install mariadb-server -y
 
-# For view mysql status
+# For viewing MySQL status
 sudo service mysql status
 
-# Start mysql
+# Start MySQL
 sudo service mysql start
 
-# Stop mysql
+# Stop MySQL
 sudo service mysql stop
 
-# Change mysql root user password
+# Change MySQL root user password
 sudo mysql -u root -p
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';
 exit;
@@ -85,24 +85,24 @@ exit;
 
 4. **Install Apache**
 ```sh
-# Install apache
+# Install Apache
 sudo apt install apache2 -y
 
-# For view apache status
+# For viewing Apache status
 sudo service apache2 status
 
-# Start apache
+# Start Apache
 sudo service apache2 start
 
-# Stop apache
+# Stop Apache
 sudo service apache2 stop
 ```
 
-5. **Install PHP 8.2 & All PHP 8.2 Extension**
+5. **Install PHP 8.2 & All PHP 8.2 Extensions**
 
-Menambahkan Repository PHP 8.2 on Raspberry Pi
+Add PHP 8.2 repository on Raspberry Pi
 
-Source : https://pimylifeup.com/raspberry-pi-latest-php/
+Source: https://pimylifeup.com/raspberry-pi-latest-php/
 ```sh
 sudo apt install lsb-release
 
@@ -112,6 +112,7 @@ echo "deb [signed-by=/usr/share/keyrings/suryphp-archive-keyring.gpg] https://pa
 
 sudo apt update
 ```
+
 Install PHP 8.2
 ```sh
 sudo apt install php8.2 php8.2-intl php8.2-mbstring php8.2-mysql php8.2-curl php8.2-gd php8.2-dom -y
@@ -119,8 +120,7 @@ sudo apt install php8.2 php8.2-intl php8.2-mbstring php8.2-mysql php8.2-curl php
 
 6. **Install Composer (Command-line installation)**
 
-
-Source : https://getcomposer.org/download/
+Source: https://getcomposer.org/download/
 ```sh
 # Download the installer to the current directory
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -138,9 +138,9 @@ php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
-7. **Clone & Setup project**
+7. **Clone & Setup Project**
 
-Clone and install semua depedency yang dibutuhkan project
+Clone and install all required dependencies
 ```sh
 cd /var/www
 
@@ -153,14 +153,14 @@ cd mading_digital
 sudo composer install
 ```
 
-Copy file ``env`` dan edit file ``.env``
+Copy the `env` file and edit the `.env` file
 
 ```
 sudo cp env .env
 sudo nano .env
 ```
 
-Uncomment CI_ENVIRONMENT
+Uncomment `CI_ENVIRONMENT`
 
 ```
 # CI_ENVIRONMENT = production
@@ -168,14 +168,14 @@ to
 CI_ENVIRONMENT = production
 ```
 
-Uncomment app.baseURL dan set url sesuaikan dengan ip address
+Uncomment `app.baseURL` and set the URL to match the IP address
 ```
 # app.baseURL = ''
 to
 app.baseURL = 'http://ip-address'
 ```
 
-Uncomment database config dan set config database
+Uncomment the database config and set the database configuration
 ```
 # database.default.hostname = localhost
 # database.default.database = ci4
@@ -192,19 +192,19 @@ database.default.DBDriver = MySQLi
 database.default.port = 3306
 ```
 
-Buat database
+Create the database
 ```sh
 sudo php spark db:create mading_digital
 
 ./reset_database.sh
 ```
 
-Aktifkan mod_rewrite apache2
+Enable Apache's `mod_rewrite`
 ```sh
 sudo a2enmod rewrite
 ```
 
-Atur DocumentRoot in 000-default.conf
+Set the `DocumentRoot` in `000-default.conf`
 ```sh
 cd /etc/apache2/sites-available
 
@@ -217,7 +217,7 @@ to
 DocumentRoot /var/www/mading_digital
 ```
 
-Menambahkan Directory mading_digital in apache2.conf
+Add the `mading_digital` directory in `apache2.conf`
 ```sh
 cd /etc/apache2
 
@@ -232,7 +232,7 @@ sudo nano apache2.conf
 </Directory>
 ```
 
-Ganti folder owner, group and izin file
+Change folder owner, group, and file permissions
 ```sh
 cd /var/www
 
@@ -241,10 +241,11 @@ sudo chown -R www-data:www-data mading_digital
 sudo chmod -R 755 mading_digital
 ```
 
-Ganti value upload_max_filesize dan post_max_size yang ada di php.ini
+Change values for `upload_max_filesize` and `post_max_size` in `php.ini`
 ```
 sudo nano /etc/php/8.2/apache2/php.ini
 ```
+
 ```
 upload_max_filesize = 2M
 post_max_size = 8M
@@ -252,28 +253,30 @@ to
 upload_max_filesize = 1G
 post_max_size = 1G
 ```
-Restart apache2
+
+Restart Apache
 ```
 sudo service apache2 restart
 ```
-8. **Fix video autoplay**
 
-Di pengaturan browser di sites setting pada sound tambahkan url situs yang diizinkan masukkan http://localhost, agar video autoplay yang ada di mading digital berfungsi.
+8. **Fix Video Autoplay**
 
-9. **Cara agar mading digital langsung terbuka saat startup**
+In the browser's site settings, under sound, add the URL `http://localhost` to allow autoplay videos on the Digital Bulletin Board.
 
-Edit file autostart
+9. **Make Digital Bulletin Board Auto-Start on Boot**
+
+Edit the autostart file
 ```sh
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 ```
 
-Tambahkan
+Add the following
 ```
 @/usr/bin/chromium http://ip-address/ --start-fullscreen
 ```
 
-## Pembuat beserta perannya
-- Aerell (Desain, Frontend, Backend)
-- Reza (Desain, Frontend)
-- Nico (Desain, Frontend)
-- Justin (Desain, Frontend)
+## Creators and Roles
+- Aerell (Design, Frontend, Backend)
+- Reza (Design, Frontend)
+- Nico (Design, Frontend)
+- Justin (Design, Frontend)
